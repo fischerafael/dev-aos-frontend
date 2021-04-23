@@ -4,7 +4,10 @@ import { CardSection } from '../../../shared/CardSection'
 
 export const NavSection = () => {
     return (
-        <CardSection title="Como o devaos pode te ajudar">
+        <CardSection
+            title="Como o DEVAOS pode te ajudar"
+            style={{ padding: '2rem' }}
+        >
             <Card
                 url="/challenges"
                 title="Desafios"

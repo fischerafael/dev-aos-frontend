@@ -1,6 +1,7 @@
 import React from 'react'
 import { Flex } from '../../design-system/container'
 import { Text } from '../../design-system/typography'
+import { CustomLink } from '../CustomLink'
 
 export const NavBar = () => {
     return (
@@ -12,9 +13,14 @@ export const NavBar = () => {
                     justifyContent: 'space-between'
                 }}
             >
-                <Text as="p" style={{ fontWeight: 'bold' }}>
-                    DEVAOS
-                </Text>
+                <CustomLink url="/">
+                    <Flex
+                        as="img"
+                        src="/assets/logo.svg"
+                        alt="Dev Aos Logo"
+                        style={{ width: '2rem' }}
+                    />
+                </CustomLink>
             </Flex>
         </Flex>
     )
