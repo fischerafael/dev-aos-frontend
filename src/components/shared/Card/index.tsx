@@ -1,14 +1,16 @@
 import React from 'react'
-import { Flex } from '../../../../design-system/container'
-import { Text } from '../../../../design-system/typography'
+import { Flex } from '../../design-system/container'
+import { Text } from '../../design-system/typography'
+import { CustomLink } from '../CustomLink'
 
 interface Props {
     title: string
     description: string
+    button?: string
     url?: string
 }
 
-export const ChallengeCard = ({ title, description, url }: Props) => {
+export const Card = ({ title, description, button, url }: Props) => {
     return (
         <Flex
             as="article"
@@ -26,12 +28,16 @@ export const ChallengeCard = ({ title, description, url }: Props) => {
                 {description}
             </Text>
             <br />
-            <Text
-                as="button"
-                style={{ textAlign: 'center', fontSize: '.75rem' }}
-            >
-                Saiba mais
-            </Text>
+            {button && (
+                <CustomLink url={url}>
+                    <Text
+                        as="button"
+                        style={{ textAlign: 'center', fontSize: '.75rem' }}
+                    >
+                        {button}
+                    </Text>
+                </CustomLink>
+            )}
         </Flex>
     )
 }
