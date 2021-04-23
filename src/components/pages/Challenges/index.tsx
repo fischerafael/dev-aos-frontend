@@ -1,27 +1,29 @@
 import React from 'react'
+import { IChallenge } from '../../../services/challenges/interface'
 
 import { NavBar } from '../../shared/NavBar'
 import { CardSection } from '../../shared/CardSection'
+import { ChallengeCard } from './ChallengeCard'
 
-import { Card } from '../../shared/Card'
-
-export const Challenges = () => {
+export const Challenges = ({ challenges }: { challenges: IChallenge[] }) => {
     return (
         <>
             <NavBar />
-            <CardSection title="Desafios">
-                <Card
-                    title="Design"
-                    description="Pratique suas habilidades como UI / UX Designer"
-                />
-                <Card
-                    title="Frontend"
-                    description="Pratique suas habilidades como desenvolvedor frontend"
-                />
-                <Card
-                    title="Backend"
-                    description="Pratique suas habilidades como desenvolvedor backend"
-                />
+            <CardSection
+                title="Desafios"
+                style={{
+                    minHeight: '90vh',
+                    padding: '2rem',
+                    alignItems: 'flex-start'
+                }}
+            >
+                {challenges.map((challenge) => (
+                    <ChallengeCard
+                        key={challenge.id}
+                        title={challenge.title}
+                        thumbnail={challenge.thumbnail}
+                    />
+                ))}
             </CardSection>
         </>
     )

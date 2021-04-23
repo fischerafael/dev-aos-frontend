@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { Flex, Grid } from '../../design-system/container'
 import { Text } from '../../design-system/typography'
 
-export const CardSection = ({ title, children }) => {
+interface Props {
+    title: string
+    children: ReactNode
+    [x: string]: any
+}
+
+export const CardSection = ({ title, children, ...rest }: Props) => {
     return (
-        <Flex as="main" style={{ padding: '1rem' }}>
+        <Flex as="main" {...rest}>
             <Flex
                 as="section"
                 style={{
-                    minHeight: '70vh',
                     maxWidth: '50rem',
                     flexDirection: 'column',
                     justifyContent: 'flex-start'

@@ -39,7 +39,7 @@ const reset = css`
         *,
         html,
         body {
-            font-size: 95%;
+            font-size: 0.95rem;
         }
     }
 
@@ -47,7 +47,7 @@ const reset = css`
         *,
         html,
         body {
-            font-size: 90%;
+            font-size: 0.9rem;
         }
     }
 `
