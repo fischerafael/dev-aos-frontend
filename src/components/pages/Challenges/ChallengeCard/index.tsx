@@ -2,9 +2,10 @@ import React from 'react'
 
 import { Flex } from '../../../design-system/container'
 import { Text } from '../../../design-system/typography'
+import { DefaultButton } from '../../../design-system/button'
+
 import { Header } from './Header'
 import { Footer } from './Footer'
-import { DefaultButton } from '../../../design-system/button'
 
 export const ChallengeCard = ({
     title,
@@ -17,7 +18,7 @@ export const ChallengeCard = ({
             as="article"
             style={{
                 flexDirection: 'column',
-                borderRadius: '.5rem',
+                borderRadius: '1rem',
                 background: '#333',
                 padding: '1rem',
                 justifyContent: 'space-between'
@@ -34,7 +35,8 @@ export const ChallengeCard = ({
                     fontSize: '.75rem',
                     fontWeight: 'normal',
                     padding: '1rem 0',
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    maxWidth: '17rem'
                 }}
             >
                 {shortDescription}
