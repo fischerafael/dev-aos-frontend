@@ -28,6 +28,7 @@ export const Challenges = ({ challenges }: { challenges: IChallenge[] }) => {
                         thumbnail={challenge.thumbnail}
                         shortDescription={challenge.short_description}
                         categories={challenge.categories}
+                        slug={challenge.slug}
                     />
                 ))}
             </CardSection>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 
 import { Flex } from '../../../design-system/container'
 import { Text } from '../../../design-system/typography'
@@ -22,6 +23,12 @@ export const ChallengeCard = ({
     categories,
     slug
 }: Props) => {
+    const router = useRouter()
+
+    const handleNavigate = () => {
+        router.push(`/challenges/${slug}`)
+    }
+
     return (
         <Flex
             as="article"
@@ -52,7 +59,10 @@ export const ChallengeCard = ({
             </Text>
 
             {slug && (
-                <DefaultButton style={{ margin: '1rem' }}>
+                <DefaultButton
+                    onClick={handleNavigate}
+                    style={{ margin: '1rem' }}
+                >
                     Detalhes
                 </DefaultButton>
             )}
