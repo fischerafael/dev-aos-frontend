@@ -1,14 +1,15 @@
 import React from 'react'
-import { Flex } from '../../design-system/container'
-import { colors } from '../../styles/Theme'
 
-export const Challenge = () => {
+import { IChallenge } from '../../../services/challenges/interface'
+
+import { NavBar } from '../../shared/NavBar'
+import { ChallengeInfo } from './ChallengeInfo'
+
+export const Challenge = ({ challenge }: { challenge: IChallenge }) => {
     return (
-        <Flex
-            as="main"
-            style={{ background: `${colors.darker}`, minHeight: '100vh' }}
-        >
-            oi
-        </Flex>
+        <>
+            <NavBar />
+            <ChallengeInfo challenge={challenge} />
+        </>
     )
 }

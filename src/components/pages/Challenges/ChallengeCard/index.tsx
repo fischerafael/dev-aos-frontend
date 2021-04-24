@@ -7,12 +7,21 @@ import { DefaultButton } from '../../../design-system/button'
 import { Header } from './Header'
 import { Footer } from './Footer'
 
+interface Props {
+    title: string
+    thumbnail: string
+    shortDescription: string
+    categories: object[]
+    slug?: string
+}
+
 export const ChallengeCard = ({
     title,
     thumbnail,
     shortDescription,
-    categories
-}) => {
+    categories,
+    slug
+}: Props) => {
     return (
         <Flex
             as="article"
@@ -42,7 +51,11 @@ export const ChallengeCard = ({
                 {shortDescription}
             </Text>
 
-            <DefaultButton style={{ margin: '1rem' }}>Detalhes</DefaultButton>
+            {slug && (
+                <DefaultButton style={{ margin: '1rem' }}>
+                    Detalhes
+                </DefaultButton>
+            )}
 
             <Footer categories={categories} />
         </Flex>

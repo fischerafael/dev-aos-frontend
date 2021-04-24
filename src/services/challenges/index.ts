@@ -8,6 +8,14 @@ class Challenge {
         const challenges = await data.json()
         return challenges
     }
+
+    findOneBySlug = async (slug: string) => {
+        const data = await fetch(
+            `${API_URL.production}/challenges?slug=${slug}`
+        )
+        const post = await data.json()
+        return post
+    }
 }
 
 export const challengesService = new Challenge()
