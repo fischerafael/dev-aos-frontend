@@ -25,6 +25,7 @@ const reset = css`
         height: 2.5rem;
         padding: 0 2rem;
         font-weight: bold;
+        font-size: 0.75rem;
         display: flex;
         align-items: center;
         justify-content: center;

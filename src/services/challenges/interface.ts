@@ -10,4 +10,5 @@ export interface IChallenge {
     description: string
     title: string
     thumbnail: string
+    short_description: string
 }

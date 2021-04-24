@@ -4,8 +4,11 @@ import { IChallenge } from '../../../services/challenges/interface'
 import { NavBar } from '../../shared/NavBar'
 import { CardSection } from '../../shared/CardSection'
 import { ChallengeCard } from './ChallengeCard'
+import { colors } from '../../styles/Theme'
 
 export const Challenges = ({ challenges }: { challenges: IChallenge[] }) => {
+    console.log(challenges)
+
     return (
         <>
             <NavBar />
@@ -14,7 +17,8 @@ export const Challenges = ({ challenges }: { challenges: IChallenge[] }) => {
                 style={{
                     minHeight: '90vh',
                     padding: '2rem',
-                    alignItems: 'flex-start'
+                    alignItems: 'flex-start',
+                    background: `${colors.darker}`
                 }}
             >
                 {challenges.map((challenge) => (
@@ -22,6 +26,8 @@ export const Challenges = ({ challenges }: { challenges: IChallenge[] }) => {
                         key={challenge.id}
                         title={challenge.title}
                         thumbnail={challenge.thumbnail}
+                        shortDescription={challenge.short_description}
+                        categories={challenge.categories}
                     />
                 ))}
             </CardSection>

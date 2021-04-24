@@ -1,4 +1,6 @@
 import React from 'react'
+import { colors } from '../../../styles/Theme'
+
 import { Card } from '../../../shared/Card'
 import { CardSection } from '../../../shared/CardSection'
 
@@ -6,7 +8,7 @@ export const NavSection = () => {
     return (
         <CardSection
             title="Como o DEVAOS pode te ajudar"
-            style={{ padding: '2rem' }}
+            style={{ padding: '2rem', background: `${colors.darker}` }}
         >
             <Card
                 url="/challenges"

@@ -1,37 +1,48 @@
 import React from 'react'
+
 import { Flex } from '../../../design-system/container'
 import { Text } from '../../../design-system/typography'
+import { Header } from './Header'
+import { Footer } from './Footer'
+import { DefaultButton } from '../../../design-system/button'
 
-export const ChallengeCard = ({ title, thumbnail }) => {
+export const ChallengeCard = ({
+    title,
+    thumbnail,
+    shortDescription,
+    categories
+}) => {
     return (
         <Flex
             as="article"
             style={{
-                background: '#444',
                 flexDirection: 'column',
-                borderRadius: '.25rem'
+                borderRadius: '.5rem',
+                background: '#333',
+                padding: '1rem',
+                justifyContent: 'space-between'
             }}
         >
-            <Flex
-                as="img"
-                src={thumbnail}
-                alt={title}
+            <Header thumbnail={thumbnail} />
+
+            <Text as="h2" style={{ fontSize: '1rem' }}>
+                {title}
+            </Text>
+            <Text
+                as="p"
                 style={{
-                    objectFit: 'cover',
-                    height: '10rem',
-                    borderRadius: '.5rem .5rem 0 0'
-                }}
-            />
-            <Flex
-                as="section"
-                style={{
-                    background: '#444',
-                    height: '10rem',
-                    borderRadius: '0 0 .5rem .5rem'
+                    fontSize: '.75rem',
+                    fontWeight: 'normal',
+                    padding: '1rem 0',
+                    textAlign: 'center'
                 }}
             >
-                <Text as="h2">{title}</Text>
-            </Flex>
+                {shortDescription}
+            </Text>
+
+            <DefaultButton style={{ margin: '1rem' }}>Detalhes</DefaultButton>
+
+            <Footer categories={categories} />
         </Flex>
     )
 }

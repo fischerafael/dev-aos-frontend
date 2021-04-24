@@ -1,11 +1,19 @@
 import React from 'react'
 import { Flex } from '../../design-system/container'
 import { Text } from '../../design-system/typography'
+import { colors } from '../../styles/Theme'
 import { CustomLink } from '../CustomLink'
 
 export const NavBar = () => {
     return (
-        <Flex as="header" style={{ height: '10vh', padding: '0 1rem' }}>
+        <Flex
+            as="header"
+            style={{
+                height: '10vh',
+                padding: '0 1rem',
+                background: `${colors.darker}`
+            }}
+        >
             <Flex
                 as="nav"
                 style={{

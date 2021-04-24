@@ -1,10 +1,19 @@
 import React from 'react'
+import { colors } from '../../../styles/Theme'
+
 import { Flex } from '../../../design-system/container'
 import { Text } from '../../../design-system/typography'
 
 export const HeroSection = () => {
     return (
-        <Flex as="main" style={{ minHeight: '70vh', padding: '1rem' }}>
+        <Flex
+            as="main"
+            style={{
+                minHeight: '70vh',
+                padding: '1rem',
+                background: `${colors.darker}`
+            }}
+        >
             <Flex
                 as="section"
                 style={{ maxWidth: '50rem', flexDirection: 'column' }}
